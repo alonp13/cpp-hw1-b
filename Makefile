@@ -9,6 +9,9 @@ OBJECTS=PhoneticFinder.o
 run: test
 	./$^
 
+main: main.o PhoneticFinder.o
+	$(CXX) $(CXXFLAGS) main.o PhoneticFinder.o -o main
+
 test: TestRunner.o Test_ofek.o Test_snir.o $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o test
 
